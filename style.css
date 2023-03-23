@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Roboto+Mono:ital@1&family=Ubuntu:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --mark-size: calc(100px * 0.9);
+}
+
+body{
+    background-color: #000;
+}
+
+header{
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    margin: 64px 0 64px;
+    color: #fff;
+}
+
+.board{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell{
+    border: 1px #fff solid;
+    width: 100px;
+    height: 100px;  
+    border-top: none;
+    border-right: none;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cell:nth-child(3n + 1){
+    border-left: none;
+}
+
+.cell:nth-child(n + 7){
+    border-bottom: none;
+}
+
+.cell.x::before, .cell.x::after {
+    content: "";
+    width: calc(var(--mark-size) * 0.15);
+    height: var(--mark-size);
+    background-color: #fff;
+    position: absolute;
+}
+
+.cell.x::before{
+    transform: rotate(45deg);
+}
+
+.cell.x::after {
+    transform: rotate(-45deg);
+}
+
+.cell.o::before, .cell.o::after {
+    content: "";
+    border-radius: 50%;
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-color: #fff;
+    position: absolute;
+}
+
+.cell.o::before{
+   width: calc(var(--mark-size) * 0.9);
+   height: calc(var(--mark-size) * 0.9);
+   background-color: #fff;
+}
+
+.cell.o::after {
+    width: calc(var(--mark-size) * 0.6);
+    height: calc(var(--mark-size) * 0.6);
+    background-color: #000;
+}
+
