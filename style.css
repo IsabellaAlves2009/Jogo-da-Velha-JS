@@ -7,7 +7,7 @@
 }
 
 :root {
-  --background: #202124;
+  --background:rgb(0, 0, 0);
   --cell-size: 100px;
   --mark-size: calc(var(--cell-size) * 0.9);
 }
